@@ -1,7 +1,6 @@
 extends layout
 append scripts
-  script(src='application.js')
-  each spec in specs
-    script(src='#{spec}')
+  each file in src_files
+    script(src='#{file}')
 block content
   #jasmine_content

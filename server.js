@@ -2,20 +2,27 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
-var specs = [];
-fs.readdir('./spec/', function(err, files) {
-  files.forEach( function (file) {
-    specs.push('/spec/'+file);
-  });
+fs.readFile('./testem.json', function (err, data) {
+  if (err) {
+    throw err; 
+  }
+  var config = JSON.parse(data);
+  console.log(config);
+
   //set path to the views (template) directory
   app.set('views', __dirname + '/views');
-  app.get('/', function(req, res){res.render('index.jade', {specs: specs});});
-  
+  app.get('/', function(req, res){res.render('index.jade', {src_files: config.src_files});});
   app.use('/jasmine-server', express.static(__dirname + '/public'));
-  app.use('/spec', express.static('./spec'));
-  app.use(express.static('public'))
-
+  
+  fs.readdirSync('.').forEach(function (file) {
+    var stat = fs.statSync("./"+file);
+    if (stat.isDirectory()) {
+      app.use('/'+file, express.static(file));
+    }
+  });
+ 
   app.listen(80);
   console.log('Listening on port 80');
 });
+
 
