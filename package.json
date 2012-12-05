@@ -2,10 +2,23 @@
   "name": "jasmine-server",
   "description": "jasmine server",
   "version": "0.0.1",
+  "bin": {
+    "jasmine-server": "./server.js"
+  },
   "dependencies": {
     "express": "3.x",
     "jade": "0.27.7",
     "async": "0.1.22",
     "wd" : "0.0.26"
+  },
+  "keywords": [
+    "jasmine",
+    "SauceLabs",
+    "Jenkins",
+    "CI"
+  ],
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/konstantinvlasenko/jasmine-server.git"
   }
 }
