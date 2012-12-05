@@ -1,3 +1,7 @@
 extends layout
+append scripts
+  script(src='application.js')
+  each spec in specs
+    script(src='#{spec}')
 block content
   #jasmine_content
