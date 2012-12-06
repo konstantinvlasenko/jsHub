@@ -7,7 +7,7 @@ html
       script(src='jasmine-server/jasmine-html.js')
       script
         (function() {
-          var jasmineEnv = jasmine.getEnv()
+          jasmineEnv = jasmine.getEnv()
           jasmineEnv.addReporter(new jasmine.HtmlReporter)
       
           window.onload = function() {
