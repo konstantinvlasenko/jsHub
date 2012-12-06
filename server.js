@@ -11,6 +11,7 @@ fs.readFile('./js.json', function (err, data) {
     throw err; 
   }
   var config = JSON.parse(data);
+  _.defaults(config, { concurrency : 2, port: 80 } );
   
   //set path to the views (template) directory
   app.set('views', __dirname + '/views');
@@ -24,16 +25,17 @@ fs.readFile('./js.json', function (err, data) {
     }
   });
  
-  app.listen(80);
-  console.log('Listening on port 80');
+  app.listen(config.port);
+  console.log('Listening on port', config.port);
     
-  async.forEach(config.browsers,
-    function(browser, callback){ 
-      _.extend(browser, {name: config.name + ' ( ' + browser.browserName + ':' + browser.version + ' on ' + browser.platform  + ' )'});
-      runner.run(config, browser, callback); 
-    },
-    process.exit
-  );
+  var _queue = async.queue(function (browser, callback) {
+    _.extend(browser, {name: config.name + ' ( ' + browser.browserName + ':' + browser.version + ' on ' + browser.platform  + ' )'});
+    console.log('start', browser.name);
+    runner.run(config, browser, callback); 
+  }, config.concurrency);
+  _queue.drain = process.exit;
+  
+  _.each(config.browsers, function(b) { _queue.push(b); }); 
 });
 
 
