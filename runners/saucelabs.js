@@ -1,7 +1,17 @@
 var webdriver = require('wd');
 var assert = require('assert');
 var async = require('async');
+var sauce = require('saucelabs');
 var _ = require('underscore');
+
+
+_updateJobStatus = function(browser, data, callback) {
+  _account = new sauce({
+    username: browser.username,
+    password: browser.accessKey
+  });
+  _account.updateJob(browser.sessionID, data, callback);
+}
 
 exports.run = function (config, options, callback) {
   // Performance Improvements and Data Collection (https://saucelabs.com/docs/additional-config)
@@ -9,13 +19,13 @@ exports.run = function (config, options, callback) {
   // 2. DISABLE STEP BY STEP SCREENSHOTS
   // 3. DISABLE SAUCE ADVISOR
   _.defaults(options,
-      { 
-        "record-video": false,
-        "record-screenshots": false,
-        "sauce-advisor": false
-      }
-    );
-
+    { 
+      "record-video": false,
+      "record-screenshots": false,
+      "sauce-advisor": false
+    }
+  );
+  
   var browser = webdriver.remote( "ondemand.saucelabs.com", 80 );
   
   browser.on('status', function(info){
@@ -50,8 +60,7 @@ exports.run = function (config, options, callback) {
         browser.eval('jasmineEnv.currentRunner().results().totalCount', function(err, totalCount) {
           assert.notEqual(totalCount, 0, 'You should have at least one test!');
           browser.eval('jasmineEnv.currentRunner().results().failedCount', function(err, failedCount) {
-            //assert.equal(failedCount, 0, 'Some tests are failed!');
-            browser.quit(callback);
+            _updateJobStatus(browser, { passed: failedCount === 0 }, function() { browser.quit(callback); } );
           });
         });
       });

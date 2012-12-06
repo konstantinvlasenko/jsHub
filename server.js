@@ -18,12 +18,12 @@ fs.readFile('./js.json', function (err, data) {
   app.get('/', function(req, res){res.render('index.jade', {src_files: config.src_files});});
   app.use('/jasmine-server', express.static(__dirname + '/public'));
   
-  fs.readdirSync('.').forEach(function (file) {
+  /*fs.readdirSync('.').forEach(function (file) {
     var stat = fs.statSync("./"+file);
     if (stat.isDirectory()) {
       app.use('/'+file, express.static(file));
     }
-  });
+  });*/
  
   app.listen(config.port);
   console.log('Listening on port', config.port);
