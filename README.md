@@ -41,3 +41,21 @@ configuration file (js.json):
   ]
 }
 </pre>
+
+`jasmine-server` outputs the results in the [TAP](http://en.wikipedia.org/wiki/Test_Anything_Protocol) format, which looks like
+
+    TAP version 13
+    ok 1 jasmine-server ( internet explorer:8 on Windows 2003 )
+    ok 2 jasmine-server ( internet explorer:9 on Windows 2008 )
+    ok 3 jasmine-server ( internet explorer:10 on Windows 2012 )
+
+    1..3
+    # tests 3
+    # pass  3
+
+    # ok
+    
+TAP is a human-readable and language-agnostic test result format. TAP plugins exist for popular CI servers
+
+* [Jenkins TAP plugin](https://wiki.jenkins-ci.org/display/JENKINS/TAP+Plugin)
+* [TeamCity TAP plugin](https://github.com/pavelsher/teamcity-tap-parser)

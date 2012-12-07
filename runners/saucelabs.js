@@ -43,7 +43,6 @@ exports.run = function (config, options, callback) {
         return _completed === false;
       },
       function(callback) {
-        console.log('wait for completion...');
         browser.eval('jasmineEnv.currentRunner().queue.running === false', function(err, completed) {
           _completed = completed;
           setTimeout(callback, 1000);
@@ -56,11 +55,11 @@ exports.run = function (config, options, callback) {
   browser.init(options, function() {
     browser.get(config.url, function() {
       waitCompletion(function(){
-        console.log('completed!');
         browser.eval('jasmineEnv.currentRunner().results().totalCount', function(err, totalCount) {
           assert.notEqual(totalCount, 0, 'You should have at least one test!');
           browser.eval('jasmineEnv.currentRunner().results().failedCount', function(err, failedCount) {
-            _updateJobStatus(browser, { passed: failedCount === 0 }, function() { browser.quit(callback); } );
+            var _passed = failedCount === 0;
+            _updateJobStatus(browser, { passed: _passed }, function() { browser.quit(function(){ callback(_passed); }); } );
           });
         });
       });

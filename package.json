@@ -11,6 +11,7 @@
     "async": "0.1.22",
     "wd" : "0.0.26",
     "saucelabs": "0.0.7",
+    "tap": "0.3.3",
     "underscore": "latest"
   },
   "keywords": [
