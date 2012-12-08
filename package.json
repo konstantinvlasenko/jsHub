@@ -12,6 +12,7 @@
     "wd" : "0.0.26",
     "saucelabs": "0.0.7",
     "tap": "0.3.3",
+    "glob": "3.1.14",
     "underscore": "latest"
   },
   "keywords": [

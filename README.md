@@ -22,11 +22,11 @@ http://nodejs.org/#download
     {
       "name": "MyApplication",
       "url": "http://my.application.com",
-      "src_files": [
+      "serve_files": [
         "MyApplication/async.min.js",
         "MyApplication/backbone.js.js",
         "MyApplication/application.js",
-        "MyApplication/spec/app_spec.js"
+        "MyApplication/spec/**/*.js"
       ],
       "browsers": [
         { "browserName": "internet explorer", "version": "10", "platform": "Windows 2012" },

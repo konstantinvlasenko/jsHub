@@ -1,11 +1,9 @@
 {
   "name": "jasmine-server",
   "url": "http://slave-1.ci.ec2l.com:8000",
-	"src_files": [
-    "MyFirstApp/async.min.js",
-    "MyFirstApp/qui/js/qui-min.js",
-    "MyFirstApp/application.js",
-    "MyFirstApp/spec/wizard_spec.js"
+	"serve_files": [
+    "node_modules/async/lib/async.js",
+    "spec/**/*.js"
   ],
   "browsers": [
     { "browserName": "internet explorer", "version": "8", "platform": "Windows 2003" },
