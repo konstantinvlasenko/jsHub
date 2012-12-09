@@ -1,5 +1,5 @@
 {
-  "name": "jsHub",
+  "name": "jshub",
   "description": "Serves and runs your JavaScript tests locally or in a Cloud (SauceLabs, BowserStack, ...)",
   "version": "0.0.1",
   "bin": {
