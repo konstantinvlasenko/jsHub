@@ -1,4 +1,4 @@
-# jsHub
+# jsHub [![Build Status](https://secure.travis-ci.org/konstantinvlasenko/jsHub.png?branch=master)](https://travis-ci.org/konstantinvlasenko/jsHub)
 
 **Supported environments:**
 
