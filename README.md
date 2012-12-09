@@ -2,8 +2,6 @@
 
 **Supported environments:**
 
-**Supported environments:**
-
   * SauceLabs(https://saucelabs.com/)
     
 **Probably supported environments (needs to be confirmed):**
