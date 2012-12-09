@@ -1,31 +1,10 @@
+var server = require('./lib/server')
 var fs = require('fs');
 var async = require('async');
 var tap = require('tap');
-var express = require('express');
 var _ = require('underscore');
 var glob = require('glob');
 var runner = require('./runners/saucelabs.js');
-
-var app = express();
-
-var startServer = function(config, callback) {
-  console.log(config);
-  //set path to the views (template) directory
-  app.set('views', __dirname + '/views');
-  app.get('/', function(req, res){res.render('index.jade', {serve_files: config.serve_files});});
-  app.use('/jshub', express.static(__dirname + '/public'));
-  
-  fs.readdirSync('.').forEach(function (file) {
-    var stat = fs.statSync("./"+file);
-    if (stat.isDirectory()) {
-      app.use('/'+file, express.static(file));
-    }
-  });
- 
-  app.listen(config.port);
-  console.log('Listening on port', config.port);
-  callback(null, config);
-}
 
 var runTests = function(config, callback) {
   var _tapProducer = new tap.Producer(true);
@@ -77,7 +56,7 @@ var getConfig = function(callback) {
 async.waterfall([
   getConfig,
   resolveServeFiles,
-  startServer,
+  server,
   runTests
   ], function (err, result) {
     process.exit();
