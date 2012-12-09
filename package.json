@@ -1,9 +1,9 @@
 {
-  "name": "jasmine-server",
-  "description": "jasmine server",
+  "name": "jsHub",
+  "description": "Serves and runs your JavaScript tests locally or in a Cloud (SauceLabs, BowserStack, ...)",
   "version": "0.0.1",
   "bin": {
-    "jasmine-server": "./server.js"
+    "jshub": "./server.js"
   },
   "dependencies": {
     "express": "3.x",
@@ -18,11 +18,16 @@
   "keywords": [
     "jasmine",
     "SauceLabs",
+    "BowserStack",
+    "browser",
+    "tests",
+    "test",
+    "testing"
     "Jenkins",
     "CI"
   ],
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/konstantinvlasenko/jasmine-server.git"
+    "url" : "https://github.com/konstantinvlasenko/jsHub.git"
   }
 }
