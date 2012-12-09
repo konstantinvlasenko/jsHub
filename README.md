@@ -1,4 +1,4 @@
-# jsHub - [Pivotal Tracker](https://www.pivotaltracker.com/projects/705299)
+# jsHub
 
 **Supported environments:**
 
