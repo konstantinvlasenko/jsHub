@@ -1,6 +1,6 @@
 extends layout
 append scripts
-  each file in src_files
+  each file in serve_files
     script(src='#{file}')
 block content
   #jasmine_content

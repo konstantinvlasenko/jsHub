@@ -12,7 +12,7 @@ var startServer = function(config, callback) {
   console.log(config);
   //set path to the views (template) directory
   app.set('views', __dirname + '/views');
-  app.get('/', function(req, res){res.render('index.jade', {src_files: config.src_files});});
+  app.get('/', function(req, res){res.render('index.jade', {serve_files: config.serve_files});});
   app.use('/jasmine-server', express.static(__dirname + '/public'));
   
   fs.readdirSync('.').forEach(function (file) {
