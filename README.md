@@ -1,4 +1,4 @@
-# jasmine-server -- I will find the appropriate description later!
+# jsHub -- Serves and runs your JavaScript tests locally or in a Cloud (SauceLabs(https://saucelabs.com/), BowserStack(http://www.browserstack.com), your own Selenium Grid (http://selenium-grid.seleniumhq.org/setting_up_selenium_grid_on_ec2.html))
 
 [Pivotal Tracker](https://www.pivotaltracker.com/projects/705299)
 
@@ -8,7 +8,7 @@ http://nodejs.org/#download
 
 ## Install
 
-    npm install jasmine-server
+    npm install jshub
 
 ## Usage
 
@@ -39,12 +39,12 @@ http://nodejs.org/#download
     }
 
 
-`jasmine-server` outputs the results in the [TAP](http://en.wikipedia.org/wiki/Test_Anything_Protocol) format, which looks like
+`jsHub` outputs the results in the [TAP](http://en.wikipedia.org/wiki/Test_Anything_Protocol) format, which looks like
 
     TAP version 13
-    ok 1 jasmine-server ( internet explorer:8 on Windows 2003 )
-    ok 2 jasmine-server ( internet explorer:9 on Windows 2008 )
-    ok 3 jasmine-server ( internet explorer:10 on Windows 2012 )
+    ok 1 jsHub ( internet explorer:8 on Windows 2003 )
+    ok 2 jsHub ( internet explorer:9 on Windows 2008 )
+    ok 3 jsHub ( internet explorer:10 on Windows 2012 )
 
     1..3
     # tests 3
