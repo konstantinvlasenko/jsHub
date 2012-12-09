@@ -32,7 +32,7 @@ describe('racer', function(){
     });
   })
   
-  it('default concurrency is 2', function(done){
+  it('should use default concurrency equals to 2', function(done){
     racer(run, config, function() {
       assert.equal(2, config.concurrency);
       done();
