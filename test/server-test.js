@@ -1,12 +1,9 @@
-var vows = require('vows');
-var assert = require('assert');
-
-vows.describe('Example').addBatch({
-    'test': {
-        topic: 45,
-
-        "should work as expected": function (topic) {
-            assert.equal(topic, 45);
-        }
-    }
-});
+var assert = require("assert")
+describe('Array', function(){
+  describe('#indexOf()', function(){
+    it('should return -1 when the value is not present', function(){
+      assert.equal(-1, [1,2,3].indexOf(5));
+      assert.equal(-1, [1,2,3].indexOf(0));
+    })
+  })
+})
