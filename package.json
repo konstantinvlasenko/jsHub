@@ -13,10 +13,11 @@
     "saucelabs": "0.0.7",
     "tap": "0.3.3",
     "glob": "3.1.14",
-    "underscore": "latest"
+    "underscore": "latest",
+    "vows": "0.7.0"
   },
   "scripts": {
-    "test": "expresso test/*"
+    "test": "vows test/*"
   },
   "keywords": [
     "jasmine",
