@@ -15,6 +15,9 @@
     "glob": "3.1.14",
     "underscore": "latest"
   },
+  "scripts": {
+    "test": "expresso test/*"
+  },
   "keywords": [
     "jasmine",
     "SauceLabs",
