@@ -1,5 +1,5 @@
 {
-  "name": "jasmine-server",
+  "name": "jsHub",
   "url": "http://slave-1.ci.ec2l.com:8000",
 	"serve_files": [
     "node_modules/async/lib/async.js",
