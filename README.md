@@ -1,6 +1,18 @@
-# jsHub -- Serves and runs your JavaScript tests locally or in a Cloud (SauceLabs(https://saucelabs.com/), BowserStack(http://www.browserstack.com), your own Selenium Grid (http://selenium-grid.seleniumhq.org/setting_up_selenium_grid_on_ec2.html))
+# jsHub - [Pivotal Tracker](https://www.pivotaltracker.com/projects/705299)
 
-[Pivotal Tracker](https://www.pivotaltracker.com/projects/705299)
+Supported environments:
+
+  * SauceLabs(https://saucelabs.com/)
+    
+Probably supported environments (needs to be confirmed):
+
+  * Selenium Grid (http://selenium-grid.seleniumhq.org)
+  * Selenium Grid on AWS EC2 (http://selenium-grid.seleniumhq.org/setting_up_selenium_grid_on_ec2.html)
+
+Going to support soon:
+  
+  * BowserStack(http://www.browserstack.com)
+  * Local browsers
 
 ## Update node to latest
 
