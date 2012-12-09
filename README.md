@@ -1,15 +1,17 @@
 # jsHub - [Pivotal Tracker](https://www.pivotaltracker.com/projects/705299)
 
-Supported environments:
+**Supported environments:**
+
+**Supported environments:**
 
   * SauceLabs(https://saucelabs.com/)
     
-Probably supported environments (needs to be confirmed):
+**Probably supported environments (needs to be confirmed):**
 
   * Selenium Grid (http://selenium-grid.seleniumhq.org)
   * Selenium Grid on AWS EC2 (http://selenium-grid.seleniumhq.org/setting_up_selenium_grid_on_ec2.html)
 
-Going to support soon:
+**Going to support soon:**
   
   * BowserStack(http://www.browserstack.com)
   * Local browsers
